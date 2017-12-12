@@ -1,0 +1,7 @@
+FROM node:6.12.0-onbuild
+
+RUN npm install -g loopback-cli nodemon
+
+# RUN chown -R node:node /usr/src/app/
+
+USER node

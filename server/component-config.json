@@ -1,0 +1,10 @@
+{
+  "loopback-component-explorer": {
+    "mountPath": "/explorer"
+  },
+  "loopback3-xtotalcount": {
+    "pattern": [
+      "*.find"
+    ]
+  }
+}
