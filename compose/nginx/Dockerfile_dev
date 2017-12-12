@@ -1,4 +1,4 @@
 FROM nginx:latest
 RUN apt-get update && apt-get install nano
 RUN mv /etc/nginx/conf.d/default.conf /etc/nginx/conf.d/default.conf.backup
-ADD compose/nginx/conf.d/lubi-cafe-dev.conf /etc/nginx/conf.d/lubi-cafe-dev.conf
+ADD compose/nginx/conf.d/loopback-docker-boilerplate.conf /etc/nginx/conf.d/loopback-docker-boilerplate.conf

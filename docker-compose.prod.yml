@@ -13,7 +13,7 @@ services:
       args:
         NODE_ENV: production
     environment:
-      DATABASE_URL: "mongodb://mongo:27017/lubi-cafe-backend"
+      DATABASE_URL: "mongodb://mongo:27017/loopback-docker-boilerplate"
     volumes:
       - /home/node/app/uploads
     ports:
