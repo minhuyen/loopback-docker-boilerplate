@@ -14,7 +14,7 @@ services:
     environment:
       DATABASE_URL: "mongodb://mongo:27017/loopback-docker-boilerplate"
     volumes:
-      - /home/node/app/uploads
+      - /usr/src/app/storage
     depends_on:
       - mongo
   mongo:

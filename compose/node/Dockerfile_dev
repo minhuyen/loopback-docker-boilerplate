@@ -1,7 +1,13 @@
 FROM node:6.12.0-onbuild
 
+# ENV HOME=/usr/src/app
+
 RUN npm install -g loopback-cli nodemon
 
 # RUN chown -R node:node /usr/src/app/
+
+RUN mkdir -p /usr/src/app/storage
+
+RUN chown -R node:node /usr/src/app/storage
 
 USER node
