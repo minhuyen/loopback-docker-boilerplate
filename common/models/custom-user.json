@@ -1,0 +1,62 @@
+{
+  "name": "CustomUser",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "http": {
+    "path": "/users"
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "orders": {
+      "type": "hasMany",
+      "model": "Order",
+      "foreignKey": "",
+      "options": {
+        "nestRemoting": false
+      }
+    },
+    "identities": {
+      "type": "hasMany",
+      "model": "CustomUserIdentity",
+      "foreignKey": "userId"
+    },
+    "credentials": {
+      "type": "hasMany",
+      "model": "CustomUserCredential",
+      "foreignKey": "userId"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "DENY"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "greet"
+    },
+    {
+      "accessType": "EXECUTE",
+      "principalType": "ROLE",
+      "principalId": "$everyone",
+      "permission": "ALLOW",
+      "property": "loginFacebook"
+    },
+    {
+      "accessType": "READ",
+      "principalType": "ROLE",
+      "principalId": "$authenticated",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

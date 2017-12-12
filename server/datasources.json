@@ -1,0 +1,45 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mongoDs": {
+    "host": "mongo",
+    "port": 27017,
+    "url": "mongodb://mongo:27017/lubi-cafe",
+    "database": "lubi-cafe",
+    "password": "",
+    "name": "mongoDs",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "Facebook": {
+    "name": "Facebook",
+    "debug": false,
+    "baseURL": "",
+    "crud": false,
+    "connector": "rest",
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://localhost:3000/auth/facebook-token/callback?access_token={accessToken}",
+          "headers": {
+            "accept": "application/json"
+          }
+        },
+        "functions": {
+          "loginWithFacebook": [
+            "accessToken"
+          ]
+        }
+      }
+    ]
+  },
+  "storage": {
+    "name": "storage",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./storage"
+  }
+}

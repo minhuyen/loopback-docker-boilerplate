@@ -1,0 +1,75 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "../node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "AccessToken": {
+    "dataSource": "mongoDs",
+    "public": false,
+    "relations": {
+      "customers": {
+        "type": "belongsTo",
+        "model": "Customer",
+        "foreignKey": "userId"
+      }
+    }
+  },
+  "ACL": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDs",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "CustomUser": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "CustomUserIdentity": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "CustomUserCredential": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "ApplicationCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "UserCredential": {
+    "dataSource": "db",
+    "public": false
+  },
+  "UserIdentity": {
+    "dataSource": "db",
+    "public": false
+  },
+  "Container": {
+    "dataSource": "storage",
+    "public": true
+  }
+}

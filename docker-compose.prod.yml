@@ -1,0 +1,40 @@
+version: '2'
+
+volumes:
+  mongo_data: {}
+  mongo_backup: {}
+
+services:
+  node:
+    restart: always
+    build:
+      context: .
+      dockerfile: ./compose/node/Dockerfile
+      args:
+        NODE_ENV: production
+    environment:
+      DATABASE_URL: "mongodb://mongo:27017/lubi-cafe-backend"
+    volumes:
+      - /home/node/app/uploads
+    ports:
+      - '3000:3000'
+    depends_on:
+      - mongo
+    # tty: true
+  mongo:
+    restart: always
+    image: mongo:3
+    command: mongod --storageEngine wiredTiger
+    volumes:
+      - mongo_data:/data/db
+      - mongo_backup:/backups
+  nginx:
+    restart: always
+    build: ./compose/nginx
+    volumes_from:
+      - node
+    depends_on:
+      - node
+    ports:
+      - "80:80"
+      - "443:443"

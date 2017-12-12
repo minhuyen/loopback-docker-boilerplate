@@ -1,0 +1,24 @@
+{
+    "facebook-login": {
+        "provider": "facebook",
+        "module": "passport-facebook",
+        "clientID": "146448649448918",
+        "clientSecret": "74c073ecfc43d5121427326944df86a1",
+        "callbackURL": "/auth/facebook/callback",
+        "authPath": "/auth/facebook",
+        "callbackPath": "/auth/facebook/callback",
+        "successRedirect": "/auth/account",
+        "scope": ["email"]
+    },
+    "facebook-token": {
+        "provider": "facebook-token",
+        "module": "passport-facebook-token",
+        "clientID": "146448649448918",
+        "clientSecret": "74c073ecfc43d5121427326944df86a1",
+        "strategy": "FacebookTokenStrategy",
+        "callbackURL": "/auth/facebook-token/callback",
+        "session": false,
+        "json": true,
+        "scope": ["email"]
+    }
+}
