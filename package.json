@@ -31,6 +31,7 @@
     "loopback-component-storage": "^3.3.1",
     "loopback-connector-mongodb": "^1.18.1",
     "loopback-connector-rest": "^2.1.0",
+    "loopback-ds-timestamp-mixin": "^3.4.1",
     "loopback3-xtotalcount": "^0.1.2",
     "passport-facebook": "^2.1.1",
     "passport-facebook-token": "^3.3.0",
