@@ -24,14 +24,6 @@
   },
   "validations": [],
   "relations": {
-    "orders": {
-      "type": "hasMany",
-      "model": "Order",
-      "foreignKey": "",
-      "options": {
-        "nestRemoting": false
-      }
-    },
     "identities": {
       "type": "hasMany",
       "model": "CustomUserIdentity",
