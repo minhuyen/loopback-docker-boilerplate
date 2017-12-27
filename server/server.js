@@ -39,6 +39,18 @@ try {
   process.exit(1); // fatal
 }
 
+function customProfileToUser(provider, profile, options) {
+  var userInfo = {
+    username: profile.username,
+    password: 'secret@template!23%',
+    email: profile.emails[0].value,
+    firstName: profile.name.familyName,
+    lastName:  profile.name.givenName,
+    avatarUrl: profile.photos[0].value
+  };
+  return userInfo;
+}
+
 // -- Add your pre-processing middleware here --
 
 // Setup the view engine (jade)
@@ -96,6 +108,8 @@ boot(app, __dirname, function(err) {
   for (var s in config) {
     var c = config[s];
     c.session = c.session !== false;
+    // overriding default user object
+    c.profileToUser = customProfileToUser;
     passportConfigurator.configureProvider(s, c);
   }
 

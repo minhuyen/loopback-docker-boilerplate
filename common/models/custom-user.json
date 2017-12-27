@@ -8,7 +8,20 @@
   "http": {
     "path": "/users"
   },
-  "properties": {},
+  "properties": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "avatarUrl": {
+      "type": "string"
+    }
+  },
   "validations": [],
   "relations": {
     "orders": {

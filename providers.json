@@ -13,6 +13,7 @@
     "facebook-token": {
         "provider": "facebook-token",
         "module": "passport-facebook-token",
+        "profileFields": ["id", "emails", "name"],
         "clientID": "146448649448918",
         "clientSecret": "74c073ecfc43d5121427326944df86a1",
         "strategy": "FacebookTokenStrategy",
