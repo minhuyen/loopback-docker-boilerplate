@@ -1,6 +1,8 @@
+'use strict';
+
 var async = require('async');
 
-module.exports = function(app){
+module.exports = function(app) {
     // data sources
     // var mongoDs = app.dataSources.mongoDs;
 
@@ -88,4 +90,4 @@ module.exports = function(app){
     //     })
     // }
 
-}
+};

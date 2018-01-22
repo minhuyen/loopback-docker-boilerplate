@@ -28,7 +28,7 @@ var bodyParser = require('body-parser');
  * if any. This is often the best approach, because the verify callback
  * can make the most accurate determination of why authentication failed.
  */
-var flash      = require('express-flash');
+var flash = require('express-flash');
 
 // attempt to build the providers/passport config
 var config = {};
@@ -45,8 +45,8 @@ function customProfileToUser(provider, profile, options) {
     password: 'secret@template!23%',
     email: profile.emails[0].value,
     firstName: profile.name.familyName,
-    lastName:  profile.name.givenName,
-    avatarUrl: profile.photos[0].value
+    lastName: profile.name.givenName,
+    avatarUrl: profile.photos[0].value,
   };
   return userInfo;
 }
@@ -102,7 +102,7 @@ boot(app, __dirname, function(err) {
   passportConfigurator.setupModels({
     userModel: app.models.CustomUser,
     userIdentityModel: app.models.CustomUserIdentity,
-    userCredentialModel: app.models.CustomUserCredential
+    userCredentialModel: app.models.CustomUserCredential,
   });
 
   for (var s in config) {
