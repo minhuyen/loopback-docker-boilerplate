@@ -1,4 +1,4 @@
-# Loopback docker boilerplate #
+# Loopback docker boilerplate #
 
 A boilerplate for a application using loopback
 
@@ -12,8 +12,8 @@ A boilerplate for a application using loopback
 
 ### Pre-requisites ###
 
-* [Docker](https://www.docker.com/)
-* [Docker-compose](https://docs.docker.com/compose/install/)
+* [Docker (at least 1.10)](https://www.docker.com/)
+* [Docker-compose (at least 1.6)](https://docs.docker.com/compose/install/)
 
 ### Getting Started ###
 
@@ -26,3 +26,6 @@ To get up and running, simply do the following:
     $ docker-compose build 
 
     $ docker-compose up
+
+* api explorer: http://localhost:3000/explorer
+* admin: http://localhost:3000
