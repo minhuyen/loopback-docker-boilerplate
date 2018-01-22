@@ -1,29 +1,28 @@
-# README #
+# Loopback docker boilerplate #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A boilerplate for a application using loopback
 
-### What is this repository for? ###
+### Features ###
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+* User Registration
+* Basic Authentication with username and password
+* Admin use [admin-on-rest](https://github.com/marmelab/admin-on-rest)
+* Oauth 2.0 Authentication
+  * Facebook
 
-### How do I get set up? ###
+### Pre-requisites ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+* [Docker](https://www.docker.com/)
+* [Docker-compose](https://docs.docker.com/compose/install/)
 
-### Contribution guidelines ###
+### Getting Started ###
 
-* Writing tests
-* Code review
-* Other guidelines
+To get up and running, simply do the following:
 
-### Who do I talk to? ###
+    $ git clone https://github.com/minhuyen/loopback-docker-boilerplate.git
+    $ cd loopback-docker-boilerplate
 
-* Repo owner or admin
-* Other community or team contact
+    # build docker images
+    $ docker-compose build 
+
+    $ docker-compose up
